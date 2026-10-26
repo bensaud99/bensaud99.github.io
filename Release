@@ -1,0 +1,18 @@
+Origin: سورس أبو سعود | Abu Saud Repo
+Label: سورس أبو سعود | Abu Saud Repo
+Suite: stable
+Version: 1.0
+Codename: ios
+Architectures: iphoneos-arm iphoneos-arm64
+Components: main
+Description: أدوات وتعديلات جيلبريك Dopamine & RootHide
+MD5Sum:
+ d41d8cd98f00b204e9800998ecf8427e 0 Packages
+ 71ff46aaf0194be658f98d0609c5e8a8 38 Packages.gz
+ 8dc5aea5b03dff8595f096f9e368e888 32 Packages.xz
+ 4059d198768f9f8dc9372dc1c54bc3c3 14 Packages.bz2
+SHA256:
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 Packages
+ 6eb74b56af6ef15ee837aab22a72b319cd7e9158e675f7ef56610cb1eb3e845d 38 Packages.gz
+ 0040f94d11d0039505328a90b2ff48968db873e9e7967307631bf40ef5679275 32 Packages.xz
+ d3dda84eb03b9738d118eb2be78e246106900493c0ae07819ad60815134a8058 14 Packages.bz2
