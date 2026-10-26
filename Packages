@@ -4,10 +4,10 @@ Architecture: iphoneos-arm64e
 Maintainer: Abdulrahman Al-Dossary <bensaud86@gmail.com>
 Depends: firmware (>= 15.0), curl, ldid
 Filename: ./debs/com.bensaud.nonicode_7.1.0_iphoneos-arm64e.deb
-Size: 635340
-MD5sum: 4bdb4970967ea59b8713c2a08855006a
-SHA1: 4825b21122d073f909335caadab13336ebac4bc8
-SHA256: a846c8a71829cfbc55accfa9a1c55fdb1a100325e330eecfb3ad095c0b86b285
+Size: 635392
+MD5sum: 1d36fdee689a30bdb718c53e9cb80f99
+SHA1: 9e43f633b3111c74e3b67cfb05a291c4603db5b6
+SHA256: 884ee4f5ada0454914b1c8a4db829c982385bdca90f95fc8fbb6e5278fc03d54
 Section: Terminal_Support
 Priority: optional
 Description: (Ultimate AI Coding Agent CLI)
