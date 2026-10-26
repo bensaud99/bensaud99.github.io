@@ -7,12 +7,12 @@ Architectures: iphoneos-arm iphoneos-arm64 iphoneos-arm64e
 Components: main
 Description: أدوات وتعديلات جيلبريك Dopamine & RootHide
 MD5Sum:
- d41d8cd98f00b204e9800998ecf8427e 0 Packages
- dfec6a2f6051be627797f4a2bfa7e42f 38 Packages.gz
- 8dc5aea5b03dff8595f096f9e368e888 32 Packages.xz
- 4059d198768f9f8dc9372dc1c54bc3c3 14 Packages.bz2
+ e34ffb7358eb6c4f31f2f7c2e735841b 746 Packages
+ 092ca9872cb5c35f3fd14a21300efbaa 574 Packages.gz
+ 3ddb8dbd649fb0b574469fccc333e0a8 608 Packages.xz
+ 77e09791ae2dbabc056b85cb4f97ca17 593 Packages.bz2
 SHA256:
- e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 Packages
- bd3b43888332f8d6ed40fed33732696440ac94efd1350b632b05947645f05bb9 38 Packages.gz
- 0040f94d11d0039505328a90b2ff48968db873e9e7967307631bf40ef5679275 32 Packages.xz
- d3dda84eb03b9738d118eb2be78e246106900493c0ae07819ad60815134a8058 14 Packages.bz2
+ 3a9154f151e9bbb05d6eb1cdc408fd260ff647da36e9583489ff3f29f432a495 746 Packages
+ ab5a63bf6c978d6487ef9bcf1466495838bc46e8e2101f67d01abd1f96a8aaa4 574 Packages.gz
+ f3c2b26efa483f121d30d83c7229cb6f5e31ad0523d412054d608446ee6717ee 608 Packages.xz
+ f74d143e04a93e18875359f82298a31856ec3815ef6e112ddd741bd0cb2b9b37 593 Packages.bz2
