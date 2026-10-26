@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة المطور | التطبيقات والتعديلات</title>
+    <!-- خطوط عربية وإنجليزية عصرية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- مكتبة الأيقونات الفخمة FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- تأثيرات الإضاءة والتوهج الخلفي المودرن -->
+    <div class="glow-bg glow-1"></div>
+    <div class="glow-bg glow-2"></div>
+
+    <!-- شريط التنقل العلوي -->
+    <header class="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-code-branch"></i>
+                <span data-i18n="site_title">ركن أبو سعود البرمجي</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="#home" class="active" data-i18n="nav_home">الرئيسية</a>
+                <a href="#projects" data-i18n="nav_projects">التطبيقات والأدوات</a>
+                <a href="#repo" data-i18n="nav_repo">مستودع السورس</a>
+                <a href="#features" data-i18n="nav_features">الأقسام</a>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- زر التبديل الفوري بين العربي والإنجليزي -->
+                <button id="lang-toggle" class="icon-btn" title="Switch Language">
+                    <i class="fa-solid fa-globe"></i>
+                    <span id="lang-label">EN</span>
+                </button>
+                <!-- زر التبديل بين الوضع الداكن والنهاري -->
+                <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
+                    <i class="fa-solid fa-sun" id="theme-icon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- الواجهة الترحيبية (Hero Section) -->
+    <section id="home" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <div class="badge">
+                    <span class="pulse-dot"></span>
+                    <span data-i18n="hero_badge">يدعم iOS 15 - 17 & RootHide / TrollStore</span>
+                </div>
+                <h1 data-i18n="hero_title">عالم من التطبيقات، الأدوات، وتعديلات النظام الاحترافية 🚀</h1>
+                <p data-i18n="hero_subtitle">
+                    منصتي الخاصة لعرض وتحميل أحدث تطبيقات iOS بصيغة IPA، وأدوات الجيلبريك (Tweaks)، ومشاريع الطرفية الذكية المصممة بأعلى أداء وأنظف كود.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fa-solid fa-download"></i>
+                        <span data-i18n="btn_explore">تصفح التحميلات</span>
+                    </a>
+                    <a href="#repo" class="btn btn-secondary">
+                        <i class="fa-solid fa-box-open"></i>
+                        <span data-i18n="btn_add_repo">إضافة السورس (Repo)</span>
+                    </a>
+                </div>
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <h3>+15</h3>
+                        <span data-i18n="stat_apps">تطبيق وأداة</span>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <span data-i18n="stat_clean">أمان واستقرار</span>
+                    </div>
+                    <div class="stat-item">
+                        <h3>Swift & C</h3>
+                        <span data-i18n="stat_native">برمجة أصلية</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="visual-card">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop" alt="UI Preview" class="hero-img">
+                    <div class="floating-badge fb-1">
+                        <i class="fa-brands fa-swift"></i>
+                        <span>SwiftUI Native</span>
+                    </div>
+                    <div class="floating-badge fb-2">
+                        <i class="fa-solid fa-terminal"></i>
+                        <span>RootHide Ready</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم شرح الأقسام والمميزات بالصور -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="feat_heading">ماذا يقدم هذا الموقع؟ ✨</h2>
+                <p data-i18n="feat_subheading">أقسام متكاملة ومشروحة بالصور لتسهيل الوصول لكل ما تحتاجه لجهازك بضغطة زر</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=600&auto=format&fit=crop" alt="iOS Apps">
+                    <div class="feature-content">
+                        <span class="feat-tag"><i class="fa-brands fa-apple"></i> IPA / TrollStore</span>
+                        <h3 data-i18n="feat1_title">تطبيقات iOS متكاملة</h3>
+                        <p data-i18n="feat1_desc">تطبيقات مبنية بواجهات SwiftUI العربية، جاهزة للتثبيت المباشر عبر TrollStore بصلاحيات كاملة بدون انتهاء الشهادة.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=600&auto=format&fit=crop" alt="Tweaks">
+                    <div class="feature-content">
+                        <span class="feat-tag"><i class="fa-solid fa-screwdriver-wrench"></i> DEB / Tweaks</span>
+                        <h3 data-i18n="feat2_title">أدوات وتعديلات الجيلبريك</h3>
+                        <p data-i18n="feat2_desc">حزم DEB مبرمجة بدقة ومتوافقة مع بيئة Dopamine و RootHide لتحسين النظام وإصلاح الخطوط والطرفية.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?q=80&w=600&auto=format&fit=crop" alt="CLI Tools">
+                    <div class="feature-content">
+                        <span class="feat-tag"><i class="fa-solid fa-terminal"></i> CLI & AI Tools</span>
+                        <h3 data-i18n="feat3_title">أدوات الطرفية والذكاء الاصطناعي</h3>
+                        <p data-i18n="feat3_desc">سكربتات وأنظمة سطر أوامر (CLI) متطورة تدمج الذكاء الاصطناعي وإدارة النظام مباشرة من تطبيق NewTerm.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم مكتبة التطبيقات والتحميلات -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="proj_heading">مكتبة التطبيقات والتعديلات 📦</h2>
+                <p data-i18n="proj_subheading">اختر القسم المناسب أو ابحث عن الأداة لتحميلها مباشرة بصيغة IPA أو DEB</p>
+            </div>
+
+            <!-- أشرطة الفلترة والبحث الفوري -->
+            <div class="controls-bar">
+                <div class="filter-tabs">
+                    <button class="filter-btn active" data-filter="all" data-i18n="filter_all">الكل</button>
+                    <button class="filter-btn" data-filter="ipa" data-i18n="filter_ipa">تطبيقات (.ipa)</button>
+                    <button class="filter-btn" data-filter="tweak" data-i18n="filter_tweak">تعديلات (.deb)</button>
+                    <button class="filter-btn" data-filter="cli" data-i18n="filter_cli">أدوات طرفية (CLI)</button>
+                </div>
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="search-input" placeholder="ابحث عن تطبيق أو أداة...">
+                </div>
+            </div>
+
+            <!-- شبكة البطاقات الديناميكية -->
+            <div id="projects-grid" class="projects-grid"></div>
+        </div>
+    </section>
+
+    <!-- قسم مستودع السورس لـ Sileo و Zebra -->
+    <section id="repo" class="repo-section">
+        <div class="container">
+            <div class="repo-banner">
+                <div class="repo-info">
+                    <h2 data-i18n="repo_title">أضف مستودع السورس الخاص بي 📲</h2>
+                    <p data-i18n="repo_desc">احصل على التحديثات التلقائية لجميع الأدوات والحزم مباشرة عبر مدير الحزم المفضل لديك في الجيلبريك (Sileo أو Zebra).</p>
+                    
+                    <div class="repo-url-box">
+                        <code id="repo-url">https://abusaoud-dev.github.io/repo/</code>
+                        <button id="copy-repo-btn" class="btn-copy" title="Copy URL">
+                            <i class="fa-regular fa-copy"></i>
+                            <span data-i18n="btn_copy">نسخ الرابط</span>
+                        </button>
+                    </div>
+
+                    <div class="package-managers">
+                        <a href="sileo://source/https://abusaoud-dev.github.io/repo/" class="pm-btn sileo">
+                            <i class="fa-solid fa-bolt"></i>
+                            <span data-i18n="add_sileo">إضافة إلى Sileo</span>
+                        </a>
+                        <a href="zbra://sources/add/https://abusaoud-dev.github.io/repo/" class="pm-btn zebra">
+                            <i class="fa-solid fa-layer-group"></i>
+                            <span data-i18n="add_zebra">إضافة إلى Zebra</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="repo-image">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop" alt="Code Repository">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- نافذة تفاصيل المشروع المنبثقة (Modal) -->
+    <div id="project-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="close-modal" class="modal-close"><i class="fa-solid fa-xmark"></i></button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- تذييل الصفحة (Footer) -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3><i class="fa-solid fa-code-branch"></i> <span data-i18n="site_title">ركن أبو سعود البرمجي</span></h3>
+                <p data-i18n="footer_desc">تطوير وبرمجة تطبيقات وأدوات iOS باحترافية.</p>
+            </div>
+            <div class="social-links">
+                <a href="#" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="#" title="Snapchat"><i class="fa-brands fa-snapchat"></i></a>
+                <a href="#" title="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n="footer_rights">جميع الحقوق محفوظة © 2026 - صُمم بكل إتقان.</p>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

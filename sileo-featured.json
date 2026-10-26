@@ -1,0 +1,17 @@
+{
+  "class": "FeaturedBannersView",
+  "banners": [
+    {
+      "title": "ArabicFix & Ghostty",
+      "package": "com.abusaoud.arabicfix",
+      "url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=700&auto=format&fit=crop",
+      "hideShadow": false
+    },
+    {
+      "title": "Noni Code CLI",
+      "package": "com.abusaoud.nonicode",
+      "url": "https://images.unsplash.com/photo-1629654297299-c8506221ca97?q=80&w=700&auto=format&fit=crop",
+      "hideShadow": false
+    }
+  ]
+}
