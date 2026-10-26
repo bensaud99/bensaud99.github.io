@@ -4,14 +4,15 @@ Architecture: iphoneos-arm64e
 Maintainer: Abdulrahman Al-Dossary <bensaud86@gmail.com>
 Depends: firmware (>= 15.0), curl, ldid
 Filename: ./debs/com.bensaud.nonicode_7.1.0_iphoneos-arm64e.deb
-Size: 635144
-MD5sum: dda7b717b0f41df6e015eb574be9c43c
-SHA1: 6b52db7a1024698180e376077d463874aba0db28
-SHA256: 9a41cd39ace7ed470c4ea04d083c93464c2f575eeda2a55e776abfd640c0b9e1
+Size: 710204
+MD5sum: d4d1d506e70676ff4e6b32b652b80bd8
+SHA1: 91d02af4b8a6d632c3074d10ba201e5dab143ca7
+SHA256: 7f3a307a048eb05b12c8e59fda50cc26f11d6529c9ff5258d812b5a459caaf3b
 Section: Terminal_Support
 Priority: optional
 Description: (Ultimate AI Coding Agent CLI)
  أقوى تطبيق وأداة CLI للذكاء الاصطناعي على الآيفون تستطيع من خلاله تشغيل جميع مزودات وموديلات الـ AI
 Author: Abdulrahman Saud Al-Dossary (Ben_Saud)
+Icon: /Library/PreferenceBundles/NoniCodePrefs.bundle/icon@2x.png
 Name: Noni Code CLI
 
