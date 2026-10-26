@@ -25,10 +25,10 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y dpkg-dev bzip2 xz-utils gzip
 
-      - name: Generate APT Indexes (Packages & Compressed)
+      - name: Generate APT Indexes
         run: |
           mkdir -p debs
-          rm -f Packages Packages.gz Packages.xz Packages.bz2 Release Release.gpg
+          rm -f Packages Packages.gz Packages.xz Packages.bz2 Release
           dpkg-scanpackages -m ./debs /dev/null > Packages
           cp Packages Packages.original
           gzip -c9 Packages.original > Packages.gz
@@ -38,29 +38,24 @@ jobs:
 
       - name: Generate Release File
         run: |
-          REPO_NAME="سورس أبو سعود | Abu Saud Repo"
-          REPO_DESC="أدوات وتعديلات جيلبريك Dopamine & RootHide"
-          
-          cat << R_EOF > Release
-Origin: ${REPO_NAME}
-Label: ${REPO_NAME}
-Suite: stable
-Version: 1.0
-Codename: ios
-Architectures: iphoneos-arm iphoneos-arm64
-Components: main
-Description: ${REPO_DESC}
-MD5Sum:
- $(md5sum Packages | cut -d ' ' -f 1) $(wc -c < Packages) Packages
- $(md5sum Packages.gz | cut -d ' ' -f 1) $(wc -c < Packages.gz) Packages.gz
- $(md5sum Packages.xz | cut -d ' ' -f 1) $(wc -c < Packages.xz) Packages.xz
- $(md5sum Packages.bz2 | cut -d ' ' -f 1) $(wc -c < Packages.bz2) Packages.bz2
-SHA256:
- $(sha256sum Packages | cut -d ' ' -f 1) $(wc -c < Packages) Packages
- $(sha256sum Packages.gz | cut -d ' ' -f 1) $(wc -c < Packages.gz) Packages.gz
- $(sha256sum Packages.xz | cut -d ' ' -f 1) $(wc -c < Packages.xz) Packages.xz
- $(sha256sum Packages.bz2 | cut -d ' ' -f 1) $(wc -c < Packages.bz2) Packages.bz2
-R_EOF
+          echo "Origin: سورس أبو سعود | Abu Saud Repo" > Release
+          echo "Label: سورس أبو سعود | Abu Saud Repo" >> Release
+          echo "Suite: stable" >> Release
+          echo "Version: 1.0" >> Release
+          echo "Codename: ios" >> Release
+          echo "Architectures: iphoneos-arm iphoneos-arm64" >> Release
+          echo "Components: main" >> Release
+          echo "Description: أدوات وتعديلات جيلبريك Dopamine & RootHide" >> Release
+          echo "MD5Sum:" >> Release
+          printf " $(md5sum Packages | cut -d ' ' -f 1) %s Packages\n" "$(wc -c < Packages)" >> Release
+          printf " $(md5sum Packages.gz | cut -d ' ' -f 1) %s Packages.gz\n" "$(wc -c < Packages.gz)" >> Release
+          printf " $(md5sum Packages.xz | cut -d ' ' -f 1) %s Packages.xz\n" "$(wc -c < Packages.xz)" >> Release
+          printf " $(md5sum Packages.bz2 | cut -d ' ' -f 1) %s Packages.bz2\n" "$(wc -c < Packages.bz2)" >> Release
+          echo "SHA256:" >> Release
+          printf " $(sha256sum Packages | cut -d ' ' -f 1) %s Packages\n" "$(wc -c < Packages)" >> Release
+          printf " $(sha256sum Packages.gz | cut -d ' ' -f 1) %s Packages.gz\n" "$(wc -c < Packages.gz)" >> Release
+          printf " $(sha256sum Packages.xz | cut -d ' ' -f 1) %s Packages.xz\n" "$(wc -c < Packages.xz)" >> Release
+          printf " $(sha256sum Packages.bz2 | cut -d ' ' -f 1) %s Packages.bz2\n" "$(wc -c < Packages.bz2)" >> Release
 
       - name: Deploy to GitHub Pages Branch
         uses: peaceiris/actions-gh-pages@v3
