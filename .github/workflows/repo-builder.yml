@@ -38,8 +38,8 @@ jobs:
 
       - name: Generate Release File
         run: |
-          echo "Origin: سورس أبو سعود | Abu Saud Repo" > Release
-          echo "Label: سورس أبو سعود | Abu Saud Repo" >> Release
+          echo "Origin: سورس بن سعود | Ben Saud Repo" > Release
+          echo "Label: سورس بن سعود | Ben Saud Repo" >> Release
           echo "Suite: stable" >> Release
           echo "Version: 1.0" >> Release
           echo "Codename: ios" >> Release
