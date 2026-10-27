@@ -10,7 +10,7 @@ const translations = {
         hero_subtitle: "منصتي الخاصة لعرض وتحميل أحدث تطبيقات iOS بصيغة IPA، وأدوات الجيلبريك (Tweaks)، ومشاريع الطرفية الذكية المصممة بأعلى أداء وأنظف كود.",
         btn_explore: "تصفح التحميلات",
         btn_add_repo: "إضافة السورس (Repo)",
-        stat_apps: "تطبيق وأداة",
+        stat_apps: "حزمة منشورة",
         stat_clean: "أمان واستقرار",
         stat_native: "برمجة أصلية",
         feat_heading: "ماذا يقدم هذا الموقع؟ ✨",
@@ -39,6 +39,7 @@ const translations = {
         btn_download_now: "تحميل مباشر",
         btn_trollstore: "تثبيت TrollStore",
         btn_details: "التفاصيل",
+        btn_soon: "قريباً على السورس",
         modal_changelog: "سجل التغييرات والمميزات:",
         modal_compatibility: "التوافق:",
         modal_size: "الحجم:"
@@ -54,7 +55,7 @@ const translations = {
         hero_subtitle: "My personal hub to showcase and download native iOS IPA apps, Jailbreak tweaks (.deb), and smart CLI tools crafted with clean code and top performance.",
         btn_explore: "Browse Downloads",
         btn_add_repo: "Add Repository",
-        stat_apps: "Apps & Tweaks",
+        stat_apps: "Published packages",
         stat_clean: "Safe & Stable",
         stat_native: "Native Code",
         feat_heading: "What Does This Platform Offer? ✨",
@@ -83,6 +84,7 @@ const translations = {
         btn_download_now: "Direct Download",
         btn_trollstore: "Install via TrollStore",
         btn_details: "Details",
+        btn_soon: "Coming to the repo",
         modal_changelog: "Features & Changelog:",
         modal_compatibility: "Compatibility:",
         modal_size: "Size:"
@@ -98,8 +100,7 @@ const projectsData = [
         size: "14.2 MB",
         compat: "iOS 15.0 - 17.0",
         image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=700&auto=format&fit=crop",
-        downloadUrl: "#download-noni-ai.ipa",
-        trollstoreUrl: "apple-magnifier://install?url=https://example.com/NoniAI.ipa",
+        soon: true,
         title: {
             ar: "محرر الأكواد الذكي Noni AI",
             en: "Noni AI Swift Code Editor"
@@ -125,11 +126,11 @@ const projectsData = [
         id: 2,
         category: "cli",
         badge: "CLI / DEB",
-        version: "v1.8.2",
-        size: "4.8 MB",
+        version: "v7.1.0",
+        size: "621 KB",
         compat: "Dopamine / RootHide",
-        image: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?q=80&w=700&auto=format&fit=crop",
-        downloadUrl: "#download-noni-cli.deb",
+        image: "assets/nonicode.png",
+        downloadUrl: "debs/com.bensaud.nonicode_7.1.0_iphoneos-arm64e.deb",
         title: {
             ar: "أداة الطرفية الذكية Noni Code CLI",
             en: "Noni Code AI CLI Agent"
@@ -159,7 +160,7 @@ const projectsData = [
         size: "850 KB",
         compat: "iOS 15 - 16.6.1 (RootHide)",
         image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=700&auto=format&fit=crop",
-        downloadUrl: "#download-arabicfix.deb",
+        soon: true,
         title: {
             ar: "أداة تعريب الطرفية ArabicFix & Ghostty",
             en: "ArabicFix Terminal & Ghostty Hook"
@@ -189,8 +190,7 @@ const projectsData = [
         size: "11.5 MB",
         compat: "iOS 15.0 - 17.5",
         image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=700&auto=format&fit=crop",
-        downloadUrl: "#download-nuniterm.ipa",
-        trollstoreUrl: "apple-magnifier://install?url=https://example.com/NoniTerm.ipa",
+        soon: true,
         title: {
             ar: "تطبيق الطرفية المطور NoniTerm",
             en: "NoniTerm Pro Terminal"
@@ -219,7 +219,7 @@ const projectsData = [
         version: "v1.7.1+ar4",
         size: "1.1 MB",
         compat: "iOS 15 - 16.7 (RootHide)",
-        image: "https://bensaud99.github.io/depictions/com.bensaud.copylogarabic/banner.png",
+        image: "depictions/com.bensaud.copylogarabic/banner.png",
         downloadUrl: "debs/com.bensaud.copylogarabic_1.7.1+ar4_iphoneos-arm64e.deb",
         title: {
             ar: "CopyLog العربي — سجل الحافظة",

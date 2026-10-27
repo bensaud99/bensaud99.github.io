@@ -66,9 +66,22 @@ document.addEventListener("DOMContentLoaded", () => {
             card.className = "project-card";
 
             const isIpa = item.category === "ipa" && item.trollstoreUrl;
-            const primaryActionText = isIpa ? translations[currentLang].btn_trollstore : translations[currentLang].btn_download_now;
+            const available = Boolean(item.trollstoreUrl || item.downloadUrl);
+            const primaryActionText = !available
+                ? translations[currentLang].btn_soon
+                : isIpa
+                    ? translations[currentLang].btn_trollstore
+                    : translations[currentLang].btn_download_now;
             const primaryActionHref = isIpa ? item.trollstoreUrl : item.downloadUrl;
-            const primaryIcon = isIpa ? "fa-solid fa-bolt" : "fa-solid fa-download";
+            const primaryIcon = !available
+                ? "fa-solid fa-hourglass-half"
+                : isIpa
+                    ? "fa-solid fa-bolt"
+                    : "fa-solid fa-download";
+            const primaryAction = available
+                ? `<a href="${primaryActionHref}" class="btn-download">`
+                : `<span class="btn-download is-unavailable" aria-disabled="true">`;
+            const primaryActionEnd = available ? "</a>" : "</span>";
 
             card.innerHTML = `
                 <div class="card-banner">
@@ -86,10 +99,10 @@ document.addEventListener("DOMContentLoaded", () => {
                         <span><i class="fa-solid fa-mobile-screen"></i> ${item.compat}</span>
                     </div>
                     <div class="card-actions">
-                        <a href="${primaryActionHref}" class="btn-download">
+                        ${primaryAction}
                             <i class="${primaryIcon}"></i>
                             <span>${primaryActionText}</span>
-                        </a>
+                        ${primaryActionEnd}
                         <button class="btn-details" data-id="${item.id}">
                             <i class="fa-solid fa-circle-info"></i>
                             <span>${translations[currentLang].btn_details}</span>
@@ -143,10 +156,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 <span><strong>${translations[currentLang].modal_size}</strong> ${item.size}</span>
             </div>
             <div style="display:flex;gap:12px;flex-wrap:wrap;">
-                <a href="${item.downloadUrl}" class="btn btn-primary" style="flex:1;justify-content:center;">
+                ${item.downloadUrl || item.trollstoreUrl
+                    ? `<a href="${item.trollstoreUrl || item.downloadUrl}" class="btn btn-primary" style="flex:1;justify-content:center;">
                     <i class="fa-solid fa-download"></i>
                     <span>${translations[currentLang].btn_download_now} (${item.category.toUpperCase()})</span>
-                </a>
+                </a>`
+                    : `<span class="btn btn-primary is-unavailable" style="flex:1;justify-content:center;" aria-disabled="true">
+                    <i class="fa-solid fa-hourglass-half"></i>
+                    <span>${translations[currentLang].btn_soon}</span>
+                </span>`}
             </div>
         `;
         modal.classList.add("active");
@@ -158,15 +176,36 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     copyRepoBtn.addEventListener("click", () => {
-        const repoUrl = document.getElementById("repo-url").textContent;
-        navigator.clipboard.writeText(repoUrl).then(() => {
+        const repoUrl = document.getElementById("repo-url").textContent.trim();
+        const done = () => {
             const span = copyRepoBtn.querySelector("span");
             span.textContent = translations[currentLang].btn_copied;
             setTimeout(() => {
                 span.textContent = translations[currentLang].btn_copy;
             }, 2000);
-        });
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(repoUrl).then(done).catch(done);
+            return;
+        }
+        // Older iOS Safari: no async clipboard, select and copy by hand.
+        const field = document.createElement("textarea");
+        field.value = repoUrl;
+        document.body.appendChild(field);
+        field.select();
+        try { document.execCommand("copy"); } catch (error) { /* nothing to do */ }
+        document.body.removeChild(field);
+        done();
     });
+
+    // The headline number is the packages actually downloadable from this page,
+    // not a made-up total.
+    const statPublished = document.getElementById("stat-published");
+    if (statPublished) {
+        statPublished.textContent = String(
+            projectsData.filter(item => item.downloadUrl || item.trollstoreUrl).length
+        );
+    }
 
     applyTheme(currentTheme);
     applyLanguage(currentLang);

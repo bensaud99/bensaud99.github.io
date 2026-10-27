@@ -508,6 +508,19 @@ html[lang="en"] body {
 
 .btn-download:hover { opacity: 0.92; }
 
+/* A card whose package is not published yet: nothing to download, so it must
+   not look or behave like a button. */
+.btn-download.is-unavailable,
+.btn.is-unavailable {
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    border: 1px dashed var(--border-color);
+    cursor: default;
+}
+
+.btn-download.is-unavailable:hover,
+.btn.is-unavailable:hover { opacity: 1; }
+
 .btn-details {
     background: var(--bg-secondary);
     color: var(--text-primary);

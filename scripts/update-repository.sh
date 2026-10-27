@@ -71,11 +71,18 @@ if ((${#packages[@]} > 0)); then
   mkdir -p "$site_dir/debs"
   cp "${packages[@]}" "$site_dir/debs/"
 fi
-for file in index.html CydiaIcon.png sileo-featured.json; do
-  if [[ -f "$file" ]]; then
-    cp "$file" "$site_dir/"
-  fi
+# Everything the site itself needs: the page, its css/js, images, depictions and
+# featured banners. Only the repository's own files stay behind. A whitelist
+# here shipped a site whose css/js/assets were all 404.
+site_exclude=" .git .github _site scripts debs Attachments apelin-project.json AGENTS.md README.md Packages Packages.xz Release Release.gpg InRelease .DS_Store "
+shopt -s nullglob
+for entry in *; do
+  case "$site_exclude" in
+    *" $entry "*) continue ;;
+  esac
+  cp -R -- "$entry" "$site_dir/"
 done
+shopt -u nullglob
 # The home page's QR code: Irisin's add-source link for the address
 # Pages serves, which the Camera opens in Irisin. Left out without
 # qrencode or an address, and the page shows the card without it.
@@ -84,9 +91,6 @@ if [[ -n "$source_url" ]] && command -v qrencode >/dev/null 2>&1; then
   [[ "$source_url" == */ ]] || source_url="$source_url/"
   qrencode -t SVG --svg-path -m 0 --foreground=1F232B -o "$site_dir/qr.svg" \
     "irisin://repository/add?url=$source_url"
-fi
-if [[ -d depictions ]]; then
-  cp -R depictions "$site_dir/depictions"
 fi
 cp "$work_dir/Packages" "$work_dir/Packages.xz" "$work_dir/Release" "$site_dir/"
 # Pages runs no Jekyll over the site.
