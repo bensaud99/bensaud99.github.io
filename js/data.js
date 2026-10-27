@@ -211,5 +211,35 @@ const projectsData = [
                 "Direct TrollStore installation with root/mobile spawn"
             ]
         }
+    },
+    {
+        id: 5,
+        category: "tweak",
+        badge: "Tweak / RootHide",
+        version: "v1.7.1",
+        size: "1.1 MB",
+        compat: "iOS 15 - 16.7 (RootHide)",
+        image: "https://bensaud99.github.io/depictions/com.bensaud.copylogarabic/banner.png",
+        downloadUrl: "debs/com.bensaud.copylogarabic_1.7.1+ar3_iphoneos-arm64e.deb",
+        title: {
+            ar: "CopyLog العربي — سجل الحافظة",
+            en: "CopyLog Arabic — Clipboard History"
+        },
+        desc: {
+            ar: "النسخة العربية الكاملة من مدير سجل الحافظة CopyLog: تعريب للقوائم ورسائل النسخ وصفحة الإعدادات، مع إيقاف الإشعار المزعج الذي يظهر أعلى الشاشة عند كل عملية نسخ.",
+            en: "Full Arabic build of the CopyLog clipboard manager: localized menus, copy messages and settings page, with the noisy on-screen copy banner turned off."
+        },
+        features: {
+            ar: [
+                "تعريب كامل للواجهة وصفحة الإعدادات",
+                "إيقاف لافتة «تم النسخ» أعلى الشاشة",
+                "مبنية لـ Dopamine RootHide (iphoneos-arm64e)"
+            ],
+            en: [
+                "Fully localized interface and settings page",
+                "On-screen copy banner disabled",
+                "Built for Dopamine RootHide (iphoneos-arm64e)"
+            ]
+        }
     }
 ];
