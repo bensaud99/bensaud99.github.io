@@ -216,11 +216,11 @@ const projectsData = [
         id: 5,
         category: "tweak",
         badge: "Tweak / RootHide",
-        version: "v1.7.1",
+        version: "v1.7.1+ar4",
         size: "1.1 MB",
         compat: "iOS 15 - 16.7 (RootHide)",
         image: "https://bensaud99.github.io/depictions/com.bensaud.copylogarabic/banner.png",
-        downloadUrl: "debs/com.bensaud.copylogarabic_1.7.1+ar3_iphoneos-arm64e.deb",
+        downloadUrl: "debs/com.bensaud.copylogarabic_1.7.1+ar4_iphoneos-arm64e.deb",
         title: {
             ar: "CopyLog العربي — سجل الحافظة",
             en: "CopyLog Arabic — Clipboard History"
