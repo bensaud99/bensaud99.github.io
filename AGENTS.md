@@ -15,6 +15,21 @@ RootHide). The device this repo is maintained on is iOS 16.4.1 roothide.
 - There is no Apelin build description here: packages are built by hand as
   below and committed as binaries.
 
+## One publisher, one source name
+`.github/workflows/update-repository.yml` is the only workflow that publishes
+Pages: it runs `scripts/update-repository.sh`, which indexes `debs/` and copies
+the site into `_site/`, then deploys that with `actions/deploy-pages`. A second
+workflow (`repo-builder.yml`) used to push to a `gh-pages` branch on every
+push; it was removed because it deployed a differently labelled `Release` and
+whichever workflow finished last decided the source's name in Irisin/Sileo.
+
+The name clients show comes from `Origin`/`Label` in `Release`, and
+`Release` is generated, never committed. Both are set in
+`scripts/update-repository.sh` to `سورس بن سعود | Ben Saud Repo`; change the
+name there, not in the workflow. Its trigger paths mean an edit to the script
+or to `debs/`, `depictions/`, `index.html` republishes the source — a change
+that merely deletes another workflow does not.
+
 ## Rebuilding CopyLog Arabic (`com.bensaud.copylogarabic`)
 The Arabic localization of the CopyLog tweak (upstream: TomT000). The packaged
 payload is copied from the upstream deb; only `DEBIAN/postinst` and the

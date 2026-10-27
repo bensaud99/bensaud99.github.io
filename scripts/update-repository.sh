@@ -14,8 +14,10 @@ for command_name in apt-ftparchive xz; do
   fi
 done
 
-name="${REPOSITORY_NAME:-$(basename "$repository_root")}"
-owner="${REPOSITORY_OWNER:-$name}"
+# The source's identity as clients show it. Fixed, so the name a repository
+# lists in Irisin/Sileo does not depend on the GitHub repository's name.
+repo_title="سورس بن سعود | Ben Saud Repo"
+repo_description="أدوات وتعديلات جيلبريك Dopamine & RootHide"
 work_dir="$(mktemp -d "$repository_root/.repo-build.XXXXXX")"
 trap 'rm -rf -- "$work_dir"' EXIT
 site_dir="$work_dir/site"
@@ -55,14 +57,14 @@ cp "$work_dir/Packages" "$work_dir/Packages.xz" "$work_dir/indexes/"
 # Release is written beside the indexes, never among them, so it does
 # not hash itself.
 apt-ftparchive \
-  -o APT::FTPArchive::Release::Origin="$owner" \
-  -o APT::FTPArchive::Release::Label="$name" \
+  -o APT::FTPArchive::Release::Origin="$repo_title" \
+  -o APT::FTPArchive::Release::Label="$repo_title" \
   -o APT::FTPArchive::Release::Suite="stable" \
   -o APT::FTPArchive::Release::Version="1.0" \
-  -o APT::FTPArchive::Release::Codename="$name" \
+  -o APT::FTPArchive::Release::Codename="ios" \
   -o APT::FTPArchive::Release::Architectures="iphoneos-arm iphoneos-arm64 iphoneos-arm64e" \
   -o APT::FTPArchive::Release::Components="main" \
-  -o APT::FTPArchive::Release::Description="Packages from $owner" \
+  -o APT::FTPArchive::Release::Description="$repo_description" \
   release "$work_dir/indexes" > "$work_dir/Release"
 
 if ((${#packages[@]} > 0)); then
